@@ -1,0 +1,177 @@
+  coins.png                  found
+  coins_truth.png            found
+  broken_rectangle1.jpg      found
+  discs_rgb.png              found
+  coins_rgb.png              found
+  Python                     3.11.16
+  NumPy                      2.4.6
+  SciPy                      1.17.1
+  Pillow                     11.1.0
+  Matplotlib                 3.10.0
+  Watershed module           version 2.2.3
+  module erode()             a 5x5 block eroded once leaves 9 pixels (expect 9)
+check_setup: OK
+k* = 109
+sigma_B2(k*) = 3700
+omega0     = 0.6262
+omega1     = 0.3738
+mu0        = 46.28
+mu1        = 172
+var0       = 161.7
+var1       = 812.3
+sigma_W2   = 404.9
+sigma_B2   = 3700
+sigma_T2   = 4105
+eta        = 0.9014
+eq16 residual: 0.0
+   t   area  components  holes
+ 109   6124          13      0
+  60   7046          13      0
+ 140   5040          21     18
+ 180   2674          16     16
+Task 2(a)(i): structuring element sizes
+  square    r=1..5: [9, 25, 49, 81, 121]
+  circular  r=1..5: [1, 9, 25, 45, 69]
+Task 2(a)(ii): 9x9 eroded, no border 81, with border 49
+  coin 14: 228 pixels, r=3 no border 99, with border 66
+Task 2(b): shape, r, area, components, found
+  square     1   6121   13    5
+  square     3   6001    9    5
+  square     5   5570   11    9
+  square     7   4328    9    6
+  circular   1   6124   13    5
+  circular   3   6078    9    5
+  circular   5   6074    9    5
+  circular   7   5903    8    4
+  best opening: square r=5, found 9, Dice by coin [0.98 0.   0.88 0.96 0.98 0.82 0.98 0.64 0.66 0.63 0.68 0.3  0.86 0.87
+ 0.83]
+Task 2(c): broken rectangle (512, 2, 0)
+  square: r=2 (comps, holes) = (2, 0), r=3 (comps, holes) = (1, 1)
+  circular: r=5 (comps, holes) = (2, 0), r=6 (comps, holes) = (1, 1)
+  gap in the top side: 5 pixels, gap in the right side: 5 pixels
+Task 3(a): d4 after the forward scan
+ [[0 0 0 1 0 0 0]
+ [0 0 1 2 1 0 0]
+ [0 1 2 3 2 1 0]
+ [1 2 3 4 3 2 1]
+ [0 1 2 3 4 3 0]
+ [0 0 1 2 3 0 0]
+ [0 0 0 1 0 0 0]]
+final d4
+ [[0 0 0 1 0 0 0]
+ [0 0 1 2 1 0 0]
+ [0 1 2 3 2 1 0]
+ [1 2 3 4 3 2 1]
+ [0 1 2 3 2 1 0]
+ [0 0 1 2 1 0 0]
+ [0 0 0 1 0 0 0]]
+final d8
+ [[0 0 0 1 0 0 0]
+ [0 0 1 1 1 0 0]
+ [0 1 1 2 1 1 0]
+ [1 1 2 2 2 1 1]
+ [0 1 1 2 1 1 0]
+ [0 0 1 1 1 0 0]
+ [0 0 0 1 0 0 0]]
+  local maxima of d4: 1
+ [[0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 1 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]]
+  local maxima of d8: 9
+ [[0 0 0 1 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 1 0 0 0]
+ [1 0 1 1 1 0 1]
+ [0 0 0 1 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 1 0 0 0]]
+Task 3(b): D4 max 15, sum 32187, agrees with scipy taxicab: True
+Task 3(b): D8 max 11, sum 23097, agrees with scipy chessboard: True
+Task 3(c): map, w, maxima pixels, markers, coins with >1 marker, markers on the table
+  D4 w=1:   85   32 [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] 0
+  D4 w=3:   63   15 [] 0
+  D4 w=5:   63   15 [] 0
+  D4 w=7:   63   15 [] 0
+  D8 w=1:  290  169 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] 0
+  D8 w=3:   90   21 [3, 6, 7, 9, 11, 13] 0
+      on coin  3: (24.0, 88.0), d=7
+      on coin 13: (104.0, 100.0), d=10
+      on coin 13: (101.5, 86.5), d=5
+      on coin  7: (62.5, 49.5), d=5
+      on coin  3: (25.0, 97.0), d=5
+      on coin  6: (62.0, 36.5), d=5
+      on coin  6: (62.0, 43.0), d=6
+      on coin  9: (62.0, 102.5), d=6
+      on coin  9: (62.0, 112.0), d=8
+      on coin  7: (64.0, 64.0), d=11
+      on coin 11: (105.0, 34.0), d=9
+      on coin 11: (106.0, 46.0), d=11
+  D8 w=5:   58   20 [3, 6, 7, 9, 11] 0
+      on coin  3: (24.0, 88.0), d=7
+      on coin  7: (62.5, 49.5), d=5
+      on coin  3: (25.0, 97.0), d=5
+      on coin  6: (62.0, 36.5), d=5
+      on coin  6: (62.0, 43.0), d=6
+      on coin  9: (62.0, 102.5), d=6
+      on coin  9: (62.0, 112.0), d=8
+      on coin  7: (64.0, 64.0), d=11
+      on coin 11: (105.0, 34.0), d=9
+      on coin 11: (106.0, 46.0), d=11
+  D8 w=7:   43   16 [11] 0
+      on coin 11: (105.0, 34.0), d=9
+      on coin 11: (106.0, 46.0), d=11
+chosen setting D4, w=5, dmin=3: (row, col, d) and coin
+  (84.00, 120.50,  7)  coin 14
+  (120.00, 120.50,  7)  coin 15
+  (12.00, 62.00,  6)  coin 2
+  (22.00, 24.00, 15)  coin 1
+  (24.00, 89.00, 11)  coin 3
+  (27.00, 106.50, 11)  coin 4
+  (62.00, 23.50, 15)  coin 5
+  (62.00, 43.50,  8)  coin 6
+  (62.00, 94.50, 11)  coin 8
+  (62.00, 110.50, 11)  coin 9
+  (64.00, 62.50, 15)  coin 7
+  (100.00, 81.00,  8)  coin 12
+  (104.00, 23.00, 15)  coin 10
+  (104.00, 98.50, 15)  coin 13
+  (106.00, 44.50, 15)  coin 11
+Otsu mask, components: regions 9, found 5, mean Dice 0.7016, worst coin 6 (0.21)
+opening, best of 2(b): regions 11, found 9, mean Dice 0.7387, worst coin 2 (0.00)
+influence zones: regions 15, found 14, mean Dice 0.9479, worst coin 6 (0.78)
+  dam pixels: 118
+  Dice by coin: 1:1.00 2:1.00 3:0.97 4:0.99 5:0.96 6:0.78 7:0.93 8:0.99 9:0.97 10:0.97 11:0.97 12:0.87 13:0.90 14:0.92 15:0.99
+auto sigma=1 thr=0.1: regions 24, found 7, mean Dice 0.6815, worst coin 15 (0.00)
+auto sigma=1 thr=0.3: regions 12, found 10, mean Dice 0.8040, worst coin 6 (0.32)
+auto sigma=2 thr=0.1: regions 31, found 7, mean Dice 0.7215, worst coin 6 (0.33)
+auto sigma=2 thr=0.3: regions 11, found 7, mean Dice 0.7373, worst coin 6 (0.20)
+  best automatic run: (1, 0.3)
+marker rho=0.3: regions 22, found 7, mean Dice 0.6975, worst coin 15 (0.00)
+marker rho=0.4: regions 15, found 10, mean Dice 0.8401, worst coin 15 (0.58)
+marker rho=0.6: regions 14, found 13, mean Dice 0.8874, worst coin 8 (0.62)
+marker rho=0.9: regions 9, found 5, mean Dice 0.6834, worst coin 6 (0.21)
+  best rho: 0.6
+  Dice by coin: 1:0.95 2:0.86 3:0.93 4:0.93 5:0.95 6:0.91 7:0.95 8:0.62 9:0.66 10:0.95 11:0.96 12:0.89 13:0.96 14:0.93 15:0.85
+  region under each marker: [12, 15, 4, 8, 9, 10, 6, 5, 1, 1, 3, 14, 11, 13, 7]
+marker watershed + influence zones: regions 15, found 15, mean Dice 0.9253, worst coin 15 (0.85)
+
+Scoreboard: method, regions, found, mean Dice
+  Otsu mask, connected components        9   5 0.7016
+  opening of it, best of Task 2(b)      11   9 0.7387
+  influence zones of the markers        15  14 0.9479
+  automatic watershed, default          24   7 0.6815
+  automatic watershed, best of four     12  10 0.8040
+  marker watershed, best rho            14  13 0.8874
+  marker watershed + influence zones    15  15 0.9253
+gray : k*=48, area 3185, components 1, inverted: False
+R    : k*=104, area 1597, components 1, inverted: False
+G    : k*=65, area 1588, components 1, inverted: False
+B    : k*=18, area 3191, components 1, inverted: True
+mean of the 11x11 patch (gray, R, G, B)
+  table        35.0   35.1   34.8   35.0
+  red disc     61.8  204.2    1.0    0.9
+  green disc   61.5    1.1  104.2    0.9
